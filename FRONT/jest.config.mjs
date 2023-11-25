@@ -7,4 +7,5 @@ export default {
   transform: {
     "^.+\\.(ts|tsx)$": "ts-jest",
   },
+  setupFiles: ["<rootDir>/.jest/setEnvVars.js"],
 };

@@ -9,8 +9,11 @@ const create = async (task: Task): Promise<Task> => {
   return await request<Task>("POST", "cards", task);
 };
 
-const update = async (id: string, task: Partial<Task>): Promise<void> => {
-  return await request<void>("PUT", `cards/${id}`, task);
+const update = async (
+  id: string,
+  task: Partial<Task>
+): Promise<Partial<Task>> => {
+  return await request<Partial<Task>>("PUT", `cards/${id}`, task);
 };
 
 const remove = async (id: string): Promise<void> => {
