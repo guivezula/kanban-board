@@ -28,7 +28,7 @@ const getToken = async (): Promise<void> => {
 export const request = async <T>(
   method: "GET" | "POST" | "PUT" | "DELETE",
   path: string,
-  data?: Record<string, unknown>
+  body?: T | Record<string, unknown>
 ): Promise<T> => {
   await getToken();
 
@@ -38,7 +38,7 @@ export const request = async <T>(
       ...HEADERS,
       Authorization: `Bearer ${token}`,
     },
-    body: data ? JSON.stringify(data) : undefined,
+    body: body ? JSON.stringify(body) : undefined,
   });
 
   if (!response.ok) {
