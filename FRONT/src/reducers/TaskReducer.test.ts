@@ -197,7 +197,7 @@ describe("Task Reducer", () => {
   it("should change the task list on remove task fulfilled", () => {
     const action = {
       type: removeTask.fulfilled,
-      payload: "1",
+      payload: [TASKS[1]],
     };
     const state = taskReducer(
       { tasks: TASKS, error: null, success: null },

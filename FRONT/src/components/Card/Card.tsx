@@ -14,7 +14,7 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
     const [taskState, setTaskState] = React.useState<Partial<Task>>({
       ...task,
     });
-    const { create, update, moveTo } = useManager();
+    const { create, update, moveTo, remove } = useManager();
     const renderViewMode = () => {
       if (modeState !== CardMode.VIEW) return;
       return (
@@ -45,9 +45,15 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
           onCreate={() =>
             create({ ...taskState, lista: TaskList.ToDo } as Task)
           }
-          onSave={() => update(taskState?.id as string, taskState)}
+          onSave={() => {
+            update(taskState?.id as string, taskState);
+            setModeState(CardMode.VIEW);
+          }}
           onNavigateNext={() => moveTo(taskState as Task, "next")}
           onNavigatePrev={() => moveTo(taskState as Task, "prev")}
+          onRemove={() => {
+            remove(taskState?.id as string);
+          }}
         />
       </styles.Container>
     );

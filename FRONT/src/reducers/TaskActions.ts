@@ -14,11 +14,11 @@ export const updateTask = createAsyncThunk<
   { id: string; task: Partial<Task> }
 >("task/update", ({ id, task }) => taskService.update(id, task));
 
-export const removeTask = createAsyncThunk<void, string>(
-  "task/remove",
-  taskService.remove
-);
-
 export const resetError = createAction("task/resetError");
 
 export const resetSuccess = createAction("task/resetSuccess");
+
+export const removeTask = createAsyncThunk<Task[], string>(
+  "task/remove",
+  (id) => taskService.remove(id)
+);

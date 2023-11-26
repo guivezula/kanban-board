@@ -1,8 +1,8 @@
-const url = import.meta.env.VITE_BASE_URL;
+const url = process.env.VITE_BASE_URL;
 
 const login = {
-  login: import.meta.env.VITE_LOGIN_MOCK,
-  senha: import.meta.env.VITE_PASSWORD_MOCK,
+  login: process.env.VITE_LOGIN_MOCK,
+  senha: process.env.VITE_PASSWORD_MOCK,
 };
 
 const HEADERS: Record<string, string> = {
@@ -13,7 +13,6 @@ const HEADERS: Record<string, string> = {
 let token: string | null = null;
 
 const getToken = async (): Promise<void> => {
-  console.log("getToken", token);
   if (token) {
     return;
   }
@@ -32,7 +31,6 @@ export const request = async <T>(
   body?: T
 ): Promise<T> => {
   await getToken();
-  console.log("request", method, path, body);
 
   const headers = {
     ...HEADERS,

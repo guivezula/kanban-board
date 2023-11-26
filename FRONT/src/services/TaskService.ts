@@ -16,8 +16,8 @@ const update = async (
   return await request<Partial<Task>>("PUT", `cards/${id}`, task);
 };
 
-const remove = async (id: string): Promise<void> => {
-  return await request<void>("DELETE", `cards/${id}`);
+const remove = async (id: string): Promise<Task[]> => {
+  return await request<Task[]>("DELETE", `cards/${id}`);
 };
 
 export const taskService = {

@@ -70,8 +70,8 @@ export const taskReducer = createReducer(initialState, (builder) => {
   }));
 
   builder.addCase(removeTask.fulfilled, (state, action) => {
-    state.tasks = state.tasks.filter((task) => task.id !== action.payload);
     state.success = "Tarefa removida com sucesso";
+    state.tasks = action.payload;
   });
 
   builder.addCase(resetError, (state) => ({ ...state, error: null }));

@@ -76,7 +76,7 @@ describe("Task Service", () => {
         lista: TaskList.ToDo,
       },
     ]);
-    jest.spyOn(taskService, "remove").mockResolvedValue();
+    jest.spyOn(taskService, "remove").mockResolvedValue([]);
 
     await taskService.remove("1");
 

@@ -65,7 +65,7 @@ export const useManager = () => {
         if (task.lista === TaskList.Doing) list = TaskList.ToDo;
       }
 
-      update(task.id as string, { lista: list });
+      update(task.id as string, { ...task, lista: list });
     });
 
   return {
