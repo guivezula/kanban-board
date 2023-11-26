@@ -16,8 +16,6 @@ export const Button = styled.button`
   justify-content: center;
 
   &:hover {
-    background-color: ${styles.color.grey};
-    opacity: 0.5;
     color: ${styles.color.green};
   }
 

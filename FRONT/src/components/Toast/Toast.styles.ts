@@ -18,6 +18,7 @@ export const Toast = styled.div<ToastProps>`
   z-index: 9999;
   font-size: ${styles.font.size.title};
   font-weight: bold;
+  font-family: ${styles.font.family.title};
   visibility: hidden;
   transform: translateY(-100%);
   border-radius: 4px;
@@ -41,6 +42,10 @@ export const Toast = styled.div<ToastProps>`
 
       ${Button} {
         color: #00401b;
+
+        &:hover {
+          color: #00401b;
+        }
       }
     `}
 
@@ -52,6 +57,10 @@ export const Toast = styled.div<ToastProps>`
 
       ${Button} {
         color: #400000;
+
+        &:hover {
+          color: #400000;
+        }
       }
     `}
 `;
@@ -59,6 +68,7 @@ export const Toast = styled.div<ToastProps>`
 export const Button = styled(ButtonIcon)`
   &:hover {
     background-color: ${styles.color.white};
+    opacity: 0.5;
   }
 `;
 
