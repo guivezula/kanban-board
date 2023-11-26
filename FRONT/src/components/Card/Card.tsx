@@ -42,9 +42,9 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
         <ActionNav
           mode={modeState}
           onCancel={() => setModeState(CardMode.VIEW)}
-          onCreate={() =>
-            create({ ...taskState, lista: TaskList.ToDo } as Task)
-          }
+          onCreate={() => {
+            create({ ...taskState, lista: TaskList.ToDo } as Task);
+          }}
           onSave={() => {
             update(taskState?.id as string, taskState);
             setModeState(CardMode.VIEW);
