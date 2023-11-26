@@ -3,9 +3,9 @@ import * as styles from "./ActionNav.styles";
 import { ActionNavIconByType, ActionNavProps } from "./ActionNav.types";
 
 export const ActionNav: React.FC<ActionNavProps> = ({ mode, ...actions }) => {
-  const handleClick = (action: () => void) => () => {
-    if (action) {
-      action();
+  const handleClick = (action: keyof typeof actions) => {
+    if (actions[action]) {
+      actions[action]!();
     }
   };
 
@@ -16,11 +16,7 @@ export const ActionNav: React.FC<ActionNavProps> = ({ mode, ...actions }) => {
           key={icon.name}
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           icon={icon.name as any}
-          onClick={() =>
-            handleClick(
-              actions[icon.action as keyof typeof actions] as () => void
-            )
-          }
+          onClick={() => handleClick(icon.action as keyof typeof actions)}
         />
       ))}
     </styles.Nav>

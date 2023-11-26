@@ -2,11 +2,11 @@ import { useState } from "react";
 import "./App.css";
 import reactLogo from "./assets/react.svg";
 import { ButtonIcon } from "./components/ButtonIcon/ButtonIcon";
-import { ActionNav } from "./components/Card/ActionNav/ActionNav";
+import { Card } from "./components/Card/Card";
 import { CardMode } from "./components/Card/Card.types";
-import { Form } from "./components/Card/Form/Form";
 import { Toast } from "./components/Toast/Toast";
 import { ToastType } from "./components/Toast/Toast.types";
+import { TaskList } from "./domain/task";
 import viteLogo from "/vite.svg";
 
 function App() {
@@ -39,8 +39,14 @@ function App() {
         type={ToastType.ERROR}
         open={true}
       />
-      <Form />
-      <ActionNav mode={CardMode.EDIT} />
+      <Card
+        mode={CardMode.CREATE}
+        task={{
+          titulo: "Hellou",
+          conteudo: "shuahusa aa  a",
+          lista: TaskList.Done,
+        }}
+      />
     </>
   );
 }

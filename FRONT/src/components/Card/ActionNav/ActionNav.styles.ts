@@ -6,8 +6,7 @@ export const Nav = styled.div<ActionNavProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px;
-  width: 100%;
+  padding: 0 16px;
 
   ${({ mode }) =>
     mode === CardMode.CREATE &&

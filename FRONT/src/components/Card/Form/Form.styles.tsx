@@ -21,7 +21,7 @@ export const Title = styled.input`
 
 export const Description = styled.textarea`
   width: 100%;
-  height: 120px;
+  height: 128px;
   border-radius: 1px;
   border: 1px solid ${styles.color.white};
   padding: 8px;
