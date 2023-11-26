@@ -7,18 +7,23 @@ import {
   removeTask,
   updateTask,
 } from "../reducers/TaskActions";
-import { selectError, selectTask } from "../reducers/TaskSelectors";
+import {
+  selectError,
+  selectSuccess,
+  selectTask,
+} from "../reducers/TaskSelectors";
 
 export const useManager = () => {
   const dispatch = useAppDispatch();
   const error = useSelector(selectError);
+  const success = useSelector(selectSuccess);
   const tasks = useSelector(selectTask);
 
   const managerCallback = (callback: () => void) => {
     try {
       callback();
     } catch (e) {
-      console.log(error);
+      console.error(error);
     }
   };
 
@@ -63,5 +68,14 @@ export const useManager = () => {
       update(task.id as string, { lista: list });
     });
 
-  return { create, update, remove, fetch, getAll: tasks, moveTo };
+  return {
+    create,
+    update,
+    remove,
+    fetch,
+    getAll: tasks,
+    moveTo,
+    getErrorMessage: error,
+    getSuccessMessage: success,
+  };
 };

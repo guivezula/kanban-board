@@ -20,3 +20,5 @@ export const removeTask = createAsyncThunk<void, string>(
 );
 
 export const resetError = createAction("task/resetError");
+
+export const resetSuccess = createAction("task/resetSuccess");

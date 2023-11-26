@@ -5,17 +5,20 @@ import {
   getTasks,
   removeTask,
   resetError,
+  resetSuccess,
   updateTask,
 } from "./TaskActions";
 
 interface TaskState {
   tasks: Task[];
   error: string | null;
+  success: string | null;
 }
 
 const initialState: TaskState = {
   tasks: [],
   error: null,
+  success: null,
 };
 
 export const taskReducer = createReducer(initialState, (builder) => {
@@ -41,6 +44,7 @@ export const taskReducer = createReducer(initialState, (builder) => {
 
   builder.addCase(createTask.fulfilled, (state, action) => {
     state.tasks.push(action.payload);
+    state.success = "Tarefa criada com sucesso";
   });
 
   builder.addCase(updateTask.pending, (state) => ({ ...state }));
@@ -55,6 +59,7 @@ export const taskReducer = createReducer(initialState, (builder) => {
       (task) => task.id === action.payload.id
     );
     state.tasks[index] = { ...state.tasks[index], ...action.payload };
+    state.success = "Tarefa atualizada com sucesso";
   });
 
   builder.addCase(removeTask.pending, (state) => ({ ...state }));
@@ -66,7 +71,10 @@ export const taskReducer = createReducer(initialState, (builder) => {
 
   builder.addCase(removeTask.fulfilled, (state, action) => {
     state.tasks = state.tasks.filter((task) => task.id !== action.payload);
+    state.success = "Tarefa removida com sucesso";
   });
 
   builder.addCase(resetError, (state) => ({ ...state, error: null }));
+
+  builder.addCase(resetSuccess, (state) => ({ ...state, success: null }));
 });

@@ -1,5 +1,5 @@
 export interface ToastProps {
-  message?: string;
+  message?: string | null;
   type?: ToastType;
   open?: boolean;
   onClose?: () => void;
