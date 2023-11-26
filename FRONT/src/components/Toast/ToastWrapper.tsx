@@ -33,5 +33,16 @@ export const ToastWrapper: React.FC = () => {
     }
   }, [getErrorMessage, getSuccessMessage]);
 
-  return <Toast open={visible} type={state} message={message} />;
+  const handleClose = () => {
+    setVisible(false);
+  };
+
+  return (
+    <Toast
+      open={visible}
+      type={state}
+      message={message}
+      onClose={handleClose}
+    />
+  );
 };
