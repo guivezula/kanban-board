@@ -18,6 +18,7 @@ export const Button = styled.button`
   &:hover {
     background-color: ${styles.color.grey};
     opacity: 0.5;
+    color: ${styles.color.green};
   }
 
   &:focus,
