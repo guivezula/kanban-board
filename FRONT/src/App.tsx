@@ -2,8 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import reactLogo from "./assets/react.svg";
 import { ButtonIcon } from "./components/ButtonIcon/ButtonIcon";
-import { Toast } from "./components/Toast/Toast";
-import { ToastType } from "./components/Toast/Toast.types";
+import { Form } from "./components/Card/Form/Form";
 import viteLogo from "/vite.svg";
 
 function App() {
@@ -31,11 +30,12 @@ function App() {
       <p className="read-the-docs">
         <ButtonIcon icon="AiOutlineCloseCircle" />
       </p>
-      <Toast
+      {/* <Toast
         message={"Cadastrado com sucesso shauhsa"}
         type={ToastType.ERROR}
         open={true}
-      />
+      /> */}
+      <Form />
     </>
   );
 }
