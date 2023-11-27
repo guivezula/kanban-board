@@ -4,7 +4,6 @@ import { defineConfig, loadEnv } from "vite";
 // https://vitejs.dev/config/
 export default defineConfig((props) => {
   const env = loadEnv(props.mode, process.cwd(), "VITE");
-  console.log(env);
   const envWithProcessPrefix = {
     "process.env": `${JSON.stringify(env)}`,
   };
@@ -12,5 +11,12 @@ export default defineConfig((props) => {
   return {
     plugins: [react()],
     define: envWithProcessPrefix,
+    server: {
+      host: true,
+      port: 8000,
+      watch: {
+        usePolling: true,
+      },
+    },
   };
 });
