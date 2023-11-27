@@ -14,6 +14,7 @@ function App() {
 
   return (
     <>
+      <styles.Title>Kanban Board</styles.Title>
       <styles.AppContainer>
         <Column type="Backlog" title="Novo" />
         <Column type={TaskList.ToDo} title="To Do" />
