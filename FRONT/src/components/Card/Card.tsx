@@ -33,7 +33,9 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
 
     const renderFormMode = () => {
       if (modeState !== CardMode.EDIT && modeState !== CardMode.CREATE) return;
-      return <Form task={task} onSubmit={(newTask) => setTaskState(newTask)} />;
+      return (
+        <Form task={taskState} onSubmit={(newTask) => setTaskState(newTask)} />
+      );
     };
     return (
       <styles.Container draggable ref={ref} {...props}>
@@ -44,6 +46,7 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
           onCancel={() => setModeState(CardMode.VIEW)}
           onCreate={() => {
             create({ ...taskState, lista: TaskList.ToDo } as Task);
+            setTaskState({});
           }}
           onSave={() => {
             update(taskState?.id as string, taskState);
