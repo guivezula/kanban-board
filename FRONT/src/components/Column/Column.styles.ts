@@ -2,9 +2,10 @@ import styled from "styled-components";
 import { styles } from "../../styles";
 
 export const Container = styled.div`
-  height: inherit;
-  width: 25vw;
-  border: 0.6px solid ${styles.color.green};
+  width: 250px;
+  min-height: 500px;
+  border-radius: 8px;
+  box-shadow: 4px 2px 4px 4px rgba(166, 247, 80, 0.2);
 
   display: flex;
   align-items: center;

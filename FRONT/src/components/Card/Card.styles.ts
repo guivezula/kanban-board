@@ -2,11 +2,11 @@ import styled from "styled-components";
 import { styles } from "../../styles";
 
 export const Container = styled.div`
-  border: 1px solid ${styles.color.white};
-  box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1);
-  background-color: ${styles.color.grey};
+  box-shadow: 2px 2px 1px 2px rgba(40, 44, 51, 0.2);
+  background-color: rgb(40, 44, 51);
+  border-radius: 8px;
 
-  width: 250px;
+  width: 200px;
   height: 232px;
   display: flex;
   flex-direction: column;
