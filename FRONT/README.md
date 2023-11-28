@@ -1,30 +1,26 @@
-# React + TypeScript + Vite
+# Teste Ada (Kanban Board)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Rodar o projeto
 
-Currently, two official plugins are available:
+- `docker-compose up`
+Rodando esse comando na pasta principal do projeto, tanto o front-end quando o back-end vão subir para a imagem e rodar na url `http://localhost:8000`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Rodar os testes
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```console
+> cd FRONT
+> npm run test
 ```
+Foram realizados testes para os serviços e para os reducers. Não houve tempo de desenvolver os testes de componentes por ter pouco tempo para desenvolver tudo.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Considerações
+
+Por conta de eu ter pouco tempo para desenvolver ainda faltou alguns detalhes para deixar mais navegável ainda:
+1. Desabilitar o botão navegador da esquerda quando estivesse na coluna ToDo e o da direita quando Done.
+2. Tratar erro de formulário.
+2. Desenvolver os testes para os componentes desenvolvido.
+3. Aplicar acessibilidade e responsividade.
+
+Mas de um modo geral, todas as especificações do teste foram realizadas incluindo os diferenciais como lint e Docker. No  mais, tudo certo.
+
+  
