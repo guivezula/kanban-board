@@ -2,10 +2,12 @@
 
 ## Rodar o projeto
 
-- `docker-compose up`
+```console
+> docker-compose up
+```
 Rodando esse comando na pasta principal do projeto, tanto o front-end quando o back-end vão subir para a imagem e rodar na url `http://localhost:8000`
 
-# Rodar os testes
+## Rodar os testes
 
 ```console
 > cd FRONT
