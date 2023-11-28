@@ -22,6 +22,7 @@ Por conta de eu ter pouco tempo para desenvolver ainda faltou alguns detalhes pa
 2. Tratar erro de formulário.
 2. Desenvolver os testes para os componentes desenvolvido.
 3. Aplicar acessibilidade e responsividade.
+4. Configurar melhor a pasta `styles` para que usasse mais variáveis ao invés de repetir fontes, cores e tamanhos.
 
 Mas de um modo geral, todas as especificações do teste foram realizadas incluindo os diferenciais como lint e Docker. No  mais, tudo certo.
 
